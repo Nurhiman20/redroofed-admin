@@ -5,7 +5,7 @@
       <v-btn color="#F73631" small dark>Add Teacher</v-btn>
     </div>
     <v-card outlined class="px-4 py-6">
-      <div class="search w-25">
+      <div class="search w-50">
         <v-form ref="form">
           <v-text-field
             v-model="search"
