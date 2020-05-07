@@ -1,0 +1,38 @@
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.v-btn {
+  text-transform: capitalize;
+}
+
+// width
+.w-50 {
+  width: 50%;
+}
+.w-25 {
+  width: 25%;
+}
+
+// table
+.table {
+  margin-top: -10px;
+  .theme--light.v-data-table thead tr:last-child th{
+    background-color: rgba(253, 52, 38, 0.1);
+  }
+  .theme--light.v-data-table thead tr th {
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(197, 14, 14)
+  }
+  .v-application {
+    .elevation-1 {
+      box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.05) !important;
+    }
+    .primary--text{
+      color: #C5870E !important;
+      caret-color: #C5870E !important;
+    }
+  }
+}

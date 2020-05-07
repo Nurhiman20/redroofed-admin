@@ -13,12 +13,9 @@
               <span :class="!item.disabled && 'text-red'">{{ item.text }}</span>
             </v-breadcrumbs-item>
           </template>
-          <template v-slot:divider>
-            <v-icon>mdi-chevron-right</v-icon>
-          </template>
         </v-breadcrumbs>
       </div>
-      <div class="px-6 mb-10">
+      <div class="px-6 mb-10 mt-3">
         <router-view></router-view>
       </div>
     </v-content>
