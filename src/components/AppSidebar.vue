@@ -34,7 +34,7 @@
           :to="item.to"
         >
           <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-icon color="#F73631">{{ item.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-title class="grey--text" style="margin-left:-15px">
             {{ item.text }}
@@ -46,12 +46,13 @@
         v-for="(mainMenuItem, i) in mainMenuData"
         :key="'main menu ' + i"
         :value="false"
+        color="#F73631"
       >
         <template v-slot:prependIcon>
-          <v-icon>{{mainMenuItem.icon}}</v-icon>
+          <v-icon color="#F73631">{{mainMenuItem.icon}}</v-icon>
         </template>
         <template v-slot:activator>
-          <v-list-item-title style="margin-left:-15px" class="grey--text">{{mainMenuItem.text}}</v-list-item-title>
+          <v-list-item-title style="margin-left:-15px">{{mainMenuItem.text}}</v-list-item-title>
         </template>
         <v-list-item link
           exact

@@ -10,7 +10,7 @@
               :disabled="item.disabled"
               :exact="item.exact"
               :to="item.to">
-              <span :class="!item.disabled && 'meteor-primary'">{{ item.text }}</span>
+              <span :class="!item.disabled && 'text-red'">{{ item.text }}</span>
             </v-breadcrumbs-item>
           </template>
           <template v-slot:divider>
@@ -18,7 +18,7 @@
           </template>
         </v-breadcrumbs>
       </div>
-      <div class="px-5 mb-10">
+      <div class="px-6 mb-10">
         <router-view></router-view>
       </div>
     </v-content>
