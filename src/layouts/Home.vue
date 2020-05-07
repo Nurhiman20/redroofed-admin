@@ -2,12 +2,25 @@
   <v-app id="keep">
     <app-header @hide="hideDrawer" :drawer="drawer"></app-header>
     <app-sidebar :drawer="drawer"></app-sidebar>
-    <v-content>
-      <v-container
-        fluid
-        class="grey lighten-4 fill-height"
-      >
-      </v-container>
+    <v-content class="app-content">
+      <div class="ml-0 mt-1">
+        <v-breadcrumbs :items="breadcrumbItems">
+          <template v-slot:item="{ item }">
+            <v-breadcrumbs-item
+              :disabled="item.disabled"
+              :exact="item.exact"
+              :to="item.to">
+              <span :class="!item.disabled && 'meteor-primary'">{{ item.text }}</span>
+            </v-breadcrumbs-item>
+          </template>
+          <template v-slot:divider>
+            <v-icon>mdi-chevron-right</v-icon>
+          </template>
+        </v-breadcrumbs>
+      </div>
+      <div class="px-5 mb-10">
+        <router-view></router-view>
+      </div>
     </v-content>
   </v-app>
 </template>
@@ -24,6 +37,31 @@ export default {
   data: () => ({
     drawer: true,
   }),
+  computed: {
+    breadcrumbItems () {
+      const isLength = this.$route.matched.length > 0
+      if (isLength) {
+        const breadcrumbArr = [...this.$route.matched]
+        let currentBreadcrumbValue = null
+        const breadcrumbComponent = breadcrumbArr.map(item => {
+          if (item.name === currentBreadcrumbValue) {
+            return false
+          } else {
+            currentBreadcrumbValue = item.name
+            return {
+              text: item.name,
+              to: item.path,
+              exact: true,
+              disabled: this.$route.name === item.name
+            }
+          }
+        })
+        return breadcrumbComponent.filter(item => item)
+      } else {
+        return []
+      }
+    }
+  },
   methods: {
     hideDrawer (value) {
       this.drawer = !this.drawer
@@ -33,6 +71,11 @@ export default {
 </script>
 
 <style lang="scss">
+.app-content {
+  position: relative;
+  min-height: 100vh;
+  background-color: #F4F5F6;
+}
 #keep .v-navigation-drawer__border {
   display: none
 }

@@ -31,6 +31,7 @@
           v-else
           :key="i"
           link
+          :to="item.to"
         >
           <v-list-item-action>
             <v-icon>{{ item.icon }}</v-icon>

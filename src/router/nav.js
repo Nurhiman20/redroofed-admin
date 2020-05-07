@@ -1,7 +1,8 @@
 export const sidebar = [
   { 
     icon: 'mdi-view-dashboard', 
-    text: 'Dashboard' 
+    text: 'Dashboard',
+    to: '/dashboard'
   }
 ]
 
@@ -15,13 +16,16 @@ export const mainMenu = [
     text: 'Member',
     children: [
       {
-        text: 'Student'
+        text: 'Student',
+        to: '/member/student'
       },
       {
-        text: 'Teacher'
+        text: 'Teacher',
+        to: '/member/teacher'
       },
       {
-        text: 'Admin'
+        text: 'Admin',
+        to: '/member/admin'
       }
     ]
   }
