@@ -9,7 +9,17 @@ export const sidebar = [
 export const mainMenu = [
   {
     icon: 'mdi-format-list-checks',
-    text: 'List of Presence'
+    text: 'List of Presence',
+    children: [
+      {
+        text: 'Student',
+        to: '/attendance/student'
+      },
+      {
+        text: 'Teacher',
+        to: '/attendance/teacher'
+      }
+    ]
   },
   { 
     icon: 'mdi-account-group', 

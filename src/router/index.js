@@ -12,6 +12,11 @@ const StudentMember = () => import('@/views/Member/views/Student')
 const TeacherMember = () => import('@/views/Member/views/Teacher')
 const AdminMember = () => import('@/views/Member/views/Admin')
 
+// Attendance
+const AttendancePage = () => import('@/views/Attendance')
+const StudentAttendance = () => import('@/views/Attendance/views/Student')
+const TeacherAttendance = () => import('@/views/Attendance/views/Teacher')
+
 Vue.use(Router)
 
 export default new Router({
@@ -51,6 +56,23 @@ export default new Router({
             }
           ]
         },
+        {
+          path: '/attendance',
+          name: 'Attendance',
+          component: AttendancePage,
+          children: [
+            {
+              path: 'student',
+              name: 'Student',
+              component: StudentAttendance
+            },
+            {
+              path: 'teacher',
+              name: 'Teacher',
+              component: TeacherAttendance
+            }
+          ]
+        }
       ]
     }
   ]
