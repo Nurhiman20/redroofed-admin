@@ -77,8 +77,11 @@
             :items="members"
             :search="search"
             :items-per-page="itemsPerPage"
+            :events="events"
+            event-overlap-mode="stack"
             hide-default-footer
             class="elevation-1"
+            :event-color="getEventColor"
             @page-count="pageCount = $event"
           >
             <template v-slot:item.other="{item}">
@@ -98,6 +101,21 @@ import * as moment from 'moment'
 export default {
   data () {
     return {
+      colors: ['#3D87F4', '#F32626'],
+      events: [
+        {
+          name: 'Student',
+          start: '2020-5-17',
+          end: '2020-5-17',
+          color: '#3D87F4'
+        },
+        {
+          name: 'Teacher',
+          start: '2020-5-17',
+          end: '2020-5-17',
+          color: '#3F51B5'
+        }
+      ],
       search: null,
       page: 1,
       pageCount: 0,
@@ -174,6 +192,9 @@ export default {
     },
     removeChips (val) {
       if (val >= 0) this.selectedMember.splice(val, 1)
+    },
+    getEventColor (event) {
+      return event.color
     }
   }
 }
