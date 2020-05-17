@@ -9,15 +9,11 @@ export const sidebar = [
 export const mainMenu = [
   {
     icon: 'mdi-format-list-checks',
-    text: 'List of Presence',
+    text: 'List of Attendance',
     children: [
       {
-        text: 'Student',
-        to: '/attendance/student'
-      },
-      {
-        text: 'Teacher',
-        to: '/attendance/teacher'
+        text: 'List',
+        to: '/attendance/list'
       }
     ]
   },
