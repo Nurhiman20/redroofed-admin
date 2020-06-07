@@ -16,6 +16,10 @@ const AdminMember = () => import('@/views/Member/views/Admin')
 const AttendancePage = () => import('@/views/Attendance')
 const ListAttendance = () => import('@/views/Attendance/views/List')
 
+// Expense Manager
+const BudgetManager = () => import('@/views/BudgetManager')
+const ListBudget = () => import('@/views/BudgetManager/views/List')
+
 Vue.use(Router)
 
 export default new Router({
@@ -64,6 +68,18 @@ export default new Router({
               path: 'list',
               name: 'List',
               component: ListAttendance
+            }
+          ]
+        },
+        {
+          path: '/budget-manager',
+          name: 'Budget Manager',
+          component: BudgetManager,
+          children: [
+            {
+              path: 'list',
+              name: 'List',
+              component: ListBudget
             }
           ]
         }

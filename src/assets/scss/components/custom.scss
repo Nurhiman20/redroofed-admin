@@ -39,5 +39,10 @@
 
 // border
 .border-bottom {
-  border-bottom: 1px solid #E0E0E0;
+  border-bottom: 1px solid $app-red2;
+}
+
+// colored div
+.red-div {
+  background-color: #FEE7E6;
 }

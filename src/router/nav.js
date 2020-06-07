@@ -34,5 +34,15 @@ export const mainMenu = [
         to: '/member/admin'
       }
     ]
+  },
+  { 
+    icon: 'mdi-currency-usd', 
+    text: 'Budget Manager',
+    children: [
+      {
+        text: 'List',
+        to: '/budget-manager/list'
+      }
+    ]
   }
 ]
